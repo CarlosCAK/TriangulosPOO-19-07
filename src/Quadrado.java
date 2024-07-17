@@ -4,15 +4,17 @@ public class Quadrado extends Forma{
 
     public Quadrado(double lado) {
         this.lado = lado;
+        this.calcularArea();
+        this.calcularPerimetro();
     }
 
     @Override
     void calcularArea() {
-        super.setArea(lado*lado);
+        super.setArea(this.lado*this.lado);
     }
 
     @Override
     void calcularPerimetro() {
-        super.setPerimeto(lado * 4 );
+        super.setPerimeto(this.lado * 4 );
     }
 }
