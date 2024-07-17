@@ -2,10 +2,19 @@ public class Quadrado extends Forma{
 
     private double lado;
 
+
     public Quadrado(double lado) {
         this.lado = lado;
         this.calcularArea();
         this.calcularPerimetro();
+    }
+
+    @Override
+    public String toString() {
+        return "Quadrado{" +
+                super.toString()+
+                "lado=" + lado +
+                '}';
     }
 
     @Override

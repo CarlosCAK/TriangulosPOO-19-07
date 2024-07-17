@@ -9,7 +9,7 @@ public class TrianguloEquilatero extends  Triangulo{
 
     @Override
     public String toString() {
-        return "TrianguloEquilatero{" + super.toString() +"}";
+        return "TrianguloEquilatero{" + super.toString() + "\n";
     }
 
     @Override

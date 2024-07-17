@@ -11,6 +11,16 @@ public class TrianguloIsoceles extends Triangulo{
         this.calcularArea();
     }
 
+    @Override
+    public String toString() {
+        return "TrianguloIsoceles{" +
+                super.toString() +
+                "ladoDiferente=" + ladoDiferente +
+                ", ladoIgual=" + ladoIgual +
+                ", altura=" + altura +
+                '}';
+    }
+
     void definirLados(){
         if(super.getLado1() == super.getLado2() && super.getLado1() != super.getLado3()){
             this.ladoDiferente = super.getLado3();

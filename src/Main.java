@@ -19,8 +19,10 @@ public class Main {
         boolean logado = false;
         int contagemErros = 0;
 
+
         while (logado == false) {
 
+            if (contagemErros > 0) System.err.println("Errou o login ou a senha, você tem 3 tentativas totais! ");
             if (contagemErros >= 3 ){
                 System.err.println("Excedeu a quantidade maxima de erros!\n Programa finalizado!");
                 System.exit(0);
@@ -38,7 +40,7 @@ public class Main {
                     break;
                 }
             }
-            System.err.println("Errou o login ou a senha, você tem 3 tentativas totais! ");
+
             contagemErros++;
         }
         gerenciamento();
@@ -60,6 +62,24 @@ public class Main {
                             "\n10- Sair da conta ");
 
         int opcao = sc.nextInt();
+
+        switch (opcao){
+            case 1:
+                cadastarCirculo();
+                break;
+            case 2 :
+                cadastrarQuadrado();
+                break;
+            case 3:
+                cadastarRetangulo();
+                break;
+            case 4:
+                cadastrarTriangulo();
+                break;
+            case 5:
+                imprimirTodasAsFormas();
+                break;
+        }
 
 
     }
@@ -101,6 +121,7 @@ public class Main {
         Retangulo r1 = new Retangulo(lado1, lado2);
 
         BancoDeDados.addForma(r1);
+        gerenciamento();
     }
     static void cadastrarTriangulo(){
 
@@ -140,6 +161,12 @@ public class Main {
         BancoDeDados.addForma(t1);
 
         gerenciamento();
+    }
+    static void imprimirTodasAsFormas(){
 
+        for (Forma forma : BancoDeDados.getFormas()){
+            System.out.println(forma.toString());
+        }
+        gerenciamento();
     }
 }

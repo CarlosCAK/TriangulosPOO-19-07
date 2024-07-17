@@ -1,9 +1,21 @@
 public class Circulo extends  Forma{
     private double raio;
-    private double diametro = raio * 2;
+    private double diametro ;
 
     public Circulo(double raio) {
         this.raio = raio;
+        this.diametro = this.raio * 2;
+        this.calcularArea();
+        this.calcularPerimetro();
+    }
+
+    @Override
+    public String toString() {
+        return "Circulo{" +
+                super.toString()+
+                "raio=" + raio +
+                ", diametro=" + diametro +
+                '}';
     }
 
     @Override

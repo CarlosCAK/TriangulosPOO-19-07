@@ -11,6 +11,16 @@ public class Triangulo extends Forma{
     }
 
     @Override
+    public String toString() {
+        return "Triangulo{" +
+                super.toString() +
+                "lado1=" + lado1 +
+                ", lado2=" + lado2 +
+                ", lado3=" + lado3 +
+                '}';
+    }
+
+    @Override
     void calcularArea() {
 
     }

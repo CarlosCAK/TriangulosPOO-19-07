@@ -10,6 +10,15 @@ public class Retangulo extends Forma {
     }
 
     @Override
+    public String toString() {
+        return "Retangulo{" +
+                super.toString()+
+                "lado1=" + lado1 +
+                ", lado2=" + lado2 +
+                '}';
+    }
+
+    @Override
     void calcularArea() {
         super.setArea(this.lado1 * this.lado2);
     }

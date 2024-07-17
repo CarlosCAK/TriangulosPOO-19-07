@@ -7,7 +7,14 @@ public class TrianguloEscaleno extends Triangulo{
         this.calcularPerimetro();
         this.calcularSemiPerimetro();
         this.calcularArea();
+    }
 
+    @Override
+    public String toString() {
+        return "TrianguloEscaleno{" +
+                super.toString() +
+                "semiPerimetro=" + semiPerimetro +
+                '}';
     }
 
     @Override
