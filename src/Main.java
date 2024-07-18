@@ -79,6 +79,21 @@ public class Main {
             case 5:
                 imprimirTodasAsFormas();
                 break;
+            case 6:
+                imprimirQuadrados();
+                break;
+            case 7:
+                imprimirCirculos();
+                break;
+            case 8:
+                imprimirTriangulos();
+                break;
+            case 9:
+                imprimirRetangulos();
+                break;
+            case 10:
+                login();
+                break;
         }
 
 
@@ -147,17 +162,17 @@ public class Main {
             System.err.println("Os lados fornecidos não formam um triângulo");
         }
         Triangulo t1;
-        // verificando se é isóceles
-        if((lado1 == lado2 && lado2 != lado3) || (lado1 == lado3 && lado3 != lado2) || (lado2 == lado3 && lado3 != lado1)){
-           t1  = new TrianguloIsoceles(lado1,lado2,lado3);
+        // verificando se é escaleno
+        if(lado1 != lado2 && lado2 != lado3 && lado3 != lado1){
+           t1  = new TrianguloEscaleno(lado1,lado2,lado3);
         }
         // verificando se é equilatero
         else if(lado1 == lado2 && lado2 == lado3){
             t1 = new TrianguloEquilatero(lado1,lado2,lado3);
         }
         else{
-             t1 = new TrianguloEscaleno(lado1,lado2,lado3);
-        }
+             t1 = new TrianguloIsoceles(lado1,lado2,lado3);
+    }
         BancoDeDados.addForma(t1);
 
         gerenciamento();
@@ -166,6 +181,40 @@ public class Main {
 
         for (Forma forma : BancoDeDados.getFormas()){
             System.out.println(forma.toString());
+        }
+        gerenciamento();
+    }
+    static void imprimirCirculos(){
+
+        for (Forma forma : BancoDeDados.getFormas()){
+            if (forma.getClass().getName().equals("Circulo")){
+                System.out.println(forma.toString());
+            }
+        }
+        gerenciamento();
+    }static void imprimirTriangulos(){
+
+        for (Forma forma : BancoDeDados.getFormas()){
+            Class<?> claseForma = forma.getClass();
+            if (claseForma.getSuperclass().getName().equals("Triangulo")){
+                System.out.println(forma.toString());
+            }
+        }
+        gerenciamento();
+    }static void imprimirRetangulos(){
+
+        for (Forma forma : BancoDeDados.getFormas()){
+            if (forma.getClass().getName().equals("Retangulo")){
+                System.out.println(forma.toString());
+            }
+        }
+        gerenciamento();
+    }static void imprimirQuadrados(){
+
+        for (Forma forma : BancoDeDados.getFormas()){
+            if (forma.getClass().getName().equals("Quadrado")){
+                System.out.println(forma.toString());
+            }
         }
         gerenciamento();
     }
