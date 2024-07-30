@@ -19,13 +19,15 @@ public class TrianguloEscaleno extends Triangulo{
 
     @Override
     void calcularArea() {
-        super.setArea(Math.sqrt(this.semiPerimetro*(semiPerimetro - super.getLado1())*
-                               (this.semiPerimetro - super.getLado2())*
-                               (this.semiPerimetro - super.getLado3())));
+
+        super.setArea(Math.sqrt(this.semiPerimetro*(this.semiPerimetro - super.getLado1())*
+                (this.semiPerimetro - super.getLado2())*
+                (this.semiPerimetro - super.getLado3())));
     }
 
     @Override
     void calcularPerimetro() {
+
         super.setPerimeto(this.getLado1() + this.getLado2() + this.getLado3());
     }
     void calcularSemiPerimetro(){
